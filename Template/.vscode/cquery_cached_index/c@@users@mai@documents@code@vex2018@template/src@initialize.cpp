@@ -4,8 +4,17 @@
 #define LEFT_PORT_BOT 2
 #define RIGHT_PORT_TOP 3
 #define RIGHT_PORT_BOT 4
+#define LEFT_MOTOR_PORT 5
+#define RIGHT_MOTOR_PORT 6
+#define GYRO_PORT 7
 
 int debug_init = 1;
+
+pros::ADIGyro gyro (GYRO_PORT);
+pros::ADIEncoder leftEnc (LEFT_PORT_TOP, LEFT_PORT_BOT, false);
+pros::ADIEncoder rightEnc (RIGHT_PORT_TOP, RIGHT_PORT_BOT, false);
+pros::ADIMotor leftMotor(LEFT_MOTOR_PORT);
+pros::ADIMotor rightMotor(RIGHT_MOTOR_PORT);
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -14,10 +23,8 @@ int debug_init = 1;
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-    //Initializing the gyro as 'gyro' with a 1 second calibration delay.
-    pros::ADIGyro gyro ('A');
-    pros::ADIEncoder leftEnc (LEFT_PORT_TOP, LEFT_PORT_BOT, false);
-    pros::ADIEncoder rightEnc (RIGHT_PORT_TOP, RIGHT_PORT_BOT, false);
+    leftEnc.reset();
+    rightEnc.reset();
 }
 
 /**

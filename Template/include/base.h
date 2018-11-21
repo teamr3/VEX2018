@@ -12,6 +12,8 @@ void moveStraight();
 extern pros::ADIGyro gyro;
 extern pros::ADIEncoder leftEnc;
 extern pros::ADIEncoder rightEnc;
+extern pros::ADIMotor leftMotor;
+extern pros::ADIMotor rightMotor;
 
 // This is the end of the header guard
 #endif

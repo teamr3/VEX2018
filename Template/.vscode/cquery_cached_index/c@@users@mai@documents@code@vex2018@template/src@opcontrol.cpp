@@ -19,7 +19,9 @@ int debug_opcon = 1;
  */
  void opcontrol() {
   while (true) {
-    cout << "Sensor Reading:" << gyro.get_value()/10 << "\n";
+    cout << "Angle: " << to_string(gyro.get_value())
+    << "    LeftEnc: " << leftEnc.get_value()
+    << "     RightEnc: " << rightEnc.get_value() << "\n";
     pros::delay(25);
   }
  }
