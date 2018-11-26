@@ -1,8 +1,6 @@
 #include "main.h"
-#include "debug.h"
 #include "base.h"
 
-int debug_auto = 1;
 /**
  * Runs the user autonomous code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via

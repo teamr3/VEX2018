@@ -8,8 +8,6 @@
 #define RIGHT_MOTOR_PORT 6
 #define GYRO_PORT 7
 
-int debug_init = 1;
-
 pros::ADIGyro gyro (GYRO_PORT);
 pros::ADIEncoder leftEnc (LEFT_PORT_TOP, LEFT_PORT_BOT, false);
 pros::ADIEncoder rightEnc (RIGHT_PORT_TOP, RIGHT_PORT_BOT, false);
@@ -25,6 +23,7 @@ pros::ADIMotor rightMotor(RIGHT_MOTOR_PORT);
 void initialize() {
     leftEnc.reset();
     rightEnc.reset();
+    gyro.reset();
 }
 
 /**
